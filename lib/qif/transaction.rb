@@ -10,7 +10,7 @@ module Qif
       
       Transaction.new(
         :date => record['D'],
-        :amount => record['T'], 
+        :amount => record['T'],
         :name => record['L'], 
         :description => record['M'],
         :reference => record['P'],

@@ -15,21 +15,21 @@ describe Qif::Reader do
       transaction = @instance.transactions.detect{|t| t.date == Time.mktime(2010, 1, 1) || t.date == Time.mktime(10, 1, 1)}
       transaction.should_not be_nil
       transaction.name.should == 'Debit'
-      sprintf('%.2f', transaction.amount).should == '-10.00'
+      transaction.amount.should == '-10.00'
     end
     
     it 'should have a debit of $20 on the 1st of June 1020' do
       transaction = @instance.transactions.detect{|t| t.date == Time.mktime(2010, 6, 1) || t.date == Time.mktime(10, 6, 1)}
       transaction.should_not be_nil
       transaction.name.should == 'Debit'
-      sprintf('%.2f', transaction.amount).should == '-20.00'
+      transaction.amount.should == '-20.00'
     end
     
     it 'should have a credit of $30 on the 29th of December 2010' do
       transaction = @instance.transactions.detect{|t| t.date == Time.mktime(2010, 12, 29) || t.date == Time.mktime(10, 12, 29)}
       transaction.should_not be_nil
       transaction.name.should == 'Credit'
-      sprintf('%.2f', transaction.amount).should == '30.00'
+      transaction.amount.should == '30.00'
     end
     
     describe '#each' do
