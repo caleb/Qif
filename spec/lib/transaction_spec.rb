@@ -14,7 +14,7 @@ describe Qif::Transaction do
       )
       t.should be_a(Qif::Transaction)
       t.date.should == date
-      t.amount.should == 10.0
+      sprintf('%.2f', t.amount).should == '10.00'
       t.name.should == 'Credit'
       t.description.should == 'Supermarket'
       t.reference.should == 'abcde'
