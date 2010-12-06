@@ -6,7 +6,7 @@ describe Qif::Transaction do
       date = Time.now
       t = Qif::Transaction.read(
         'D' => date,
-        'T' => '10.0',
+        'T' => '10.00',
         'L' => 'Credit',
         'M' => 'Supermarket',
         'P' => 'abcde',
@@ -14,7 +14,7 @@ describe Qif::Transaction do
       )
       t.should be_a(Qif::Transaction)
       t.date.should == date
-      sprintf('%.2f', t.amount).should == '10.00'
+      t.amount.should == '10.00'
       t.name.should == 'Credit'
       t.description.should == 'Supermarket'
       t.reference.should == 'abcde'
