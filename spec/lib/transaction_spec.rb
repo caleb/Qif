@@ -30,7 +30,7 @@ describe Qif::Transaction do
     before do
       @instance = Qif::Transaction.new(
         :date => Time.mktime(2010, 1, 2),
-        :amount => -10.0,
+        :amount => '-10.00',
         :name => 'Debit',
         :description => 'Supermarket',
         :reference => 'abcde',

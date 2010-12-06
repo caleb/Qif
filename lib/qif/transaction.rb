@@ -32,7 +32,7 @@ module Qif
     def to_s(format = 'dd/mm/yyyy')
       {
         'D' => DateFormat.new(format).format(date),
-        'T' => sprintf('%.2f', amount),
+        'T' => amount,
         'L' => name,
         'M' => description,
         'P' => reference,
