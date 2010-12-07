@@ -3,7 +3,7 @@ require 'qif/date_format'
 module Qif
   # The Qif::Transaction class represents transactions in a qif file.
   class Transaction
-    attr_accessor :date, :amount, :name, :description, :reference, :check_number
+    attr_accessor :date, :amount, :name, :description, :reference, :number
     
     def self.read(record) #::nodoc
       return nil unless record['D'].respond_to?(:strftime)
@@ -14,7 +14,7 @@ module Qif
         :name => record['L'], 
         :description => record['M'],
         :reference => record['P'],
-        :check_number => record['N']
+        :number => record['N']
       )
     end
     
@@ -24,7 +24,7 @@ module Qif
       @name = attributes[:name]
       @description = attributes[:description]
       @reference = attributes[:reference]
-      @check_number = attributes[:check_number]
+      @number = attributes[:number]
     end
     
     # Returns a representation of the transaction as it
@@ -36,7 +36,7 @@ module Qif
         'L' => name,
         'M' => description,
         'P' => reference,
-        'N' => check_number
+        'N' => number
       }.map{|k,v| "#{k}#{v}" }.join("\n")
     end
   end

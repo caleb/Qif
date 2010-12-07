@@ -18,7 +18,7 @@ describe Qif::Transaction do
       t.name.should == 'Credit'
       t.description.should == 'Supermarket'
       t.reference.should == 'abcde'
-      t.check_number.should == '1001'
+      t.number.should == '1001'
     end
 
     it 'should return nil if the date does not respond to strftime' do
@@ -34,7 +34,7 @@ describe Qif::Transaction do
         :name => 'Debit',
         :description => 'Supermarket',
         :reference => 'abcde',
-        :check_number => '1001'
+        :number => '1001'
       )
     end
 
