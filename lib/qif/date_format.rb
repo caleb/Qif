@@ -33,6 +33,8 @@ module Qif
       format.gsub!('mm', '%m')
       format.gsub!('yyyy', '%Y')
       format.gsub!('yy', '%y')
+      format.gsub!('\'', '/')
+      format.gsub!('-', '/')
       format
     end
     
