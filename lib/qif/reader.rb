@@ -118,7 +118,7 @@ module Qif
         
         record[key] = line[1..-1].strip
         
-        if date = @format.parse(record[key])
+        if key == 'D' && date = @format.parse(record[key])
           record[key] = date
         end
       end until line =~ /^\^/
