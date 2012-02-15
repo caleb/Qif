@@ -34,7 +34,6 @@ module Qif
       format.gsub!('yyyy', '%Y')
       format.gsub!('yy', '%y')
       format.gsub!('\'', '/')
-      format.gsub!('-', '/')
       
       format
     end
@@ -46,7 +45,6 @@ module Qif
       format.gsub!('yyyy', '([1-2][0-9]{3})')
       format.gsub!('yy', '([0-9]{2})')
       format.gsub!('\'', '/')
-      format.gsub!('-', '/')
       
       /#{format}/mi
     end
