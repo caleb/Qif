@@ -11,9 +11,8 @@ module Qif
     def parse(date)
       regex = convert_format_to_regex
       order = date_order
-      date.gsub!(/[^\d\s]/, '/')
       
-      if match = regex.match(date)
+      if match = regex.match(date.gsub(/[^\d\s]/, '/'))
         Time.mktime(*%w(y m d).map{|t| match[order.index(t) + 1].to_i })
       end
     end
