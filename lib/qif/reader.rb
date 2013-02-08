@@ -95,6 +95,8 @@ module Qif
         @header = line[1..-1].strip
       else
         @header = ''
+        # no header found, go back to top
+        rewind
       end
     end
     
