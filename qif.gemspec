@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.homepage = %q{}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Qif"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{qif}
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{A library for reading and writing quicken QIF files.}
 end
